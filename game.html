@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilih Petualangan</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        #story { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Pilih Petualangan</h1>
+    <div id="story">
+        <p id="narrative">Kamu berada di sebuah hutan gelap. Apa yang ingin kamu lakukan?</p>
+        <button onclick="chooseOption('jalan')">Jalan ke depan</button>
+        <button onclick="chooseOption('bersembunyi')">Bersembunyi di balik pohon</button>
+    </div>
+    <div id="feedback"></div>
+
+    <script>
+        function chooseOption(option) {
+            const narrative = document.getElementById('narrative');
+            const feedback = document.getElementById('feedback');
+
+            if (option === 'jalan') {
+                narrative.textContent = 'Kamu berjalan ke depan dan menemukan jalan keluar dari hutan!';
+                feedback.textContent = 'Selamat! Kamu berhasil!';
+            } else if (option === 'bersembunyi') {
+                narrative.textContent = 'Kamu bersembunyi, tapi hutan semakin gelap dan kamu terjebak.';
+                feedback.textContent = 'Oh tidak, kamu terjebak!';
+            }
+        }
+    </script>
+</body>
+</html>
